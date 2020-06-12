@@ -2,15 +2,19 @@ package unicesumar.segundoBimestre;
 
 public class AppTransporte {
 
+	// Horario 1 <---> 0..1 Destino (bidirecional)
+	// transporte 1 <--- 1..* horarios (unidirecional)
+	// Horario 0..* <---> 0..* passageito (bidirecional)
+	
 	public static void main(String[] args) {
 
 		Transporte onibus = new Transporte("Onibus", "MARCOPOLO");
 
 		Horario saida = new Horario("09:00 horas", "25/10/2000", onibus);
 
-		Destino saoPaulo = new Destino("S„o Paulo", "1200 km", saida);
+		Destino saoPaulo = new Destino("S√£o Paulo", "1200 km", saida);
 
-		Passageiro joao = new Passageiro("Jo„o", 36, "99999999-6");
+		Passageiro joao = new Passageiro("Jo√£o", 36, "99999999-6");
 		Passageiro maria = new Passageiro("Maria", 49, "99998963-6");
 		Passageiro emanuel = new Passageiro("Emanuel", 25, "89632574-6");
 
@@ -28,15 +32,15 @@ public class AppTransporte {
 		System.out.println("-DESTINO");
 		System.out.println("-------------------");
 		System.out.println("Destino: " + saida.getDestino().getRegiao());
-		System.out.println("Dist‚ncia: " + saida.getDestino().getKilometros());
+		System.out.println("Dist√¢ncia: " + saida.getDestino().getKilometros());
 		System.out.println(" ");
 		System.out.println("-PASSAGEIROS");
 		System.out.println("--------------------");
 		
 		listarPassageiros(saida);
 		System.out.println("-----------------------------------------------------------------------------------------------");
-		System.out.println("Horario da Passagem do Jo„o: "+joao.getHorarios().get(0).getData()+"   "+joao.getHorarios().get(0).getHora());
-		System.out.println("Destino do Jo„o: "+joao.getHorarios().get(0).getDestino().getRegiao());
+		System.out.println("Horario da Passagem do Jo√£o: "+joao.getHorarios().get(0).getData()+"   "+joao.getHorarios().get(0).getHora());
+		System.out.println("Destino do Jo√£o: "+joao.getHorarios().get(0).getDestino().getRegiao());
 	}
 	
 	public static void listarPassageiros(Horario h ) {
